@@ -1,0 +1,50 @@
+{
+  "id": "1e968cb0-6bce-11eb-8577-cd64038e734a",
+  "name": "PasswordGenerator",
+  "friendlyName": "PasswordGenerator",
+  "description": "This task generates a complex password",
+  "author": "Barbara Forbes",
+  "helpMarkDown": "Get a complex password to use in your pipeline ",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "1"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "PasswordGenerator $(message)",
+  "inputs": [
+    {
+      "name": "Length",
+      "type": "int",
+      "label": "Password Length",
+      "required": false,
+      "helpMarkDown": "The length of the password"
+    },
+    {
+      "name": "Resultname",
+      "type": "String",
+      "label": "Name of the result variable",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "The name of the output variable"
+    },
+    {
+      "name": "isPlainText",
+      "type": "boolean",
+      "label": "output in plain text",
+      "required": false,
+      "helpMarkDown": "Set to true to get an output in plain text"
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "New-Password.ps1"
+    }
+  }
+}
